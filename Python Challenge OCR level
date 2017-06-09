@@ -1,0 +1,14 @@
+from urllib.request import urlopen
+import re
+
+request = urlopen("http://www.pythonchallenge.com/pc/def/ocr.html")
+
+originalFile = request.read()
+
+decodeFile = originalFile.decode("utf-8")
+
+foundLetters = re.findall('[a-z]', decodeFile)
+
+foundLetters = ''.join(foundLetters)
+
+print (foundLetters)
