@@ -1,4 +1,7 @@
+import time
 ans = 0
+
+start = time.clock()
 
 
 for hunthousands in range(0,5):
@@ -15,3 +18,4 @@ for hunthousands in range(0,5):
 
 ans -= 1
 print (ans)
+print(time.clock() - start)
