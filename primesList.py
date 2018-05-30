@@ -13,4 +13,6 @@ def primes_sieve(limit):
 
     return primes
 
-primeList = primes_sieve(####)
+primeList = primes_sieve(1111)
+
+print (primeList)
