@@ -15,6 +15,3 @@ def rwh_primes1v2(n):
         if sieve[i]:
             sieve[2*i*(i+1)::2*i+1] = bytearray((n//2-2*i*(i+1))//(2*i+1)+1)
     return [2,*compress(range(3,n,2), sieve[1:])]
-
-primesList = rwh_primes1v2(100000)
-print(primesList)
