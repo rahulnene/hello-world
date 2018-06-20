@@ -1,20 +1,21 @@
-from itertools import compress
+import random
 
-def rwh_primes1v1(n):
-    """ Returns  a list of primes < n for n > 2 """
-    sieve = bytearray([True]) * (n//2)
-    for i in range(3,int(n**0.5)+1,2):
-        if sieve[i//2]:
-            sieve[i*i//2::i] = bytearray((n-i*i-1)//(2*i)+1)
-    return [2,*compress(range(3,n,2), sieve[1:])]
+pyramid = [1,2,3,4]
+cubic = [1,2,3,4,5,6]
+sumPyr = 0
+sumCub = 0
+favorable = 0
+total = 100000
 
-def rwh_primes1v2(n):
-    """ Returns a list of primes < n for n > 2 """
-    sieve = bytearray([True]) * (n//2+1)
-    for i in range(1,int(n**0.5)//2+1):
-        if sieve[i]:
-            sieve[2*i*(i+1)::2*i+1] = bytearray((n//2-2*i*(i+1))//(2*i+1)+1)
-    return [2,*compress(range(3,n,2), sieve[1:])]
+for i in range (0,total):
+    for throw in range(0, 9):
+        sumPyr += random.choice(pyramid)
+    for throw in range(0, 6):
+        sumCub += random.choice(cubic)
+    #print(sumPyr,sumCub)
+    if sumPyr > sumCub:
+        favorable += 1
+    sumCub = 0
+    sumPyr = 0
 
-primesList = rwh_primes1v2(100000)
-print(primesList)
+print(favorable)
