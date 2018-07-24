@@ -12,7 +12,7 @@ def primes_sieve(limit):
         primes.append(i)
 
     return primes
-
-primeList = primes_sieve(1111)
-
-print (primeList)
+#
+# primeList = primes_sieve(1111)
+#
+# print (primeList)
