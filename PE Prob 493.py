@@ -1,7 +1,7 @@
 import random
 iterate = 0
 summ = 0
-totalIter = 1000000
+totalIter = 1000
 
 
 while iterate < totalIter:

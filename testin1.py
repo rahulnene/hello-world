@@ -1,12 +1,16 @@
-import astropy.cosmology as c
-import astropy.units as u
+import random
 
+dartCoordX = 0
+dartCoordY = 0
+inside,out = 0,0
+darts = 100000
 
+for dart in range(darts):
+    dartCoordX = random.uniform(-1, 1)
+    dartCoordY = random.uniform(-1, 1)
+    if (dartCoordX**2 + dartCoordY**2 < 1):
+        inside += 1
+    else:
+        out += 1
 
-cosmo = c.FlatLambdaCDM(H0=70 * u.km / u.s / u.Mpc, Tcmb0=2.725 * u.K, Om0=0.3)
-print(c.WMAP7.critical_density(0))
-print(c.Planck15.critical_density(0))
-
-
-
-
+print(inside*4/darts)

@@ -11,8 +11,8 @@ def prod_digits(n):
         n //= 10
     return s
 
-largestIn = np.arange(1,500)
-outputAve = np.arange(1,500)
+largestIn = np.arange(1,50)
+outputAve = np.arange(1,50)
 for item1 in largestIn:
     totalSum = 0
     largest = item1

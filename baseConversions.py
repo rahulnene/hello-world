@@ -1,12 +1,12 @@
 from time import clock as time
 
 def numberValidInBase(input,base):
-    input_string = str(input)
-    digitRep = {0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8 9:9, "A":10, "B":11, "C":12, "D":13, "E":14, "F":15, "G":16, "H":17, "I":18, "J":19, "K":20, "L":21, "M":22, "N":23, "O":24, "P":25, "Q":26, "R":27, "S":28, "T":29, "U":30, "V":31, "W":32, "X":33, "Y":34, "Z":35, }
-    for digit in input_string:
-        if int(digit) >= base:
-            print(input," cannot exist in this base (" ,base, "), try agian.")
-            return False
+    # # input_string = str(input)
+    # for digit in input_string:
+    #     if int(digit) >= base:
+    #         print(input," cannot exist in this base (" ,base, "), try agian.")
+    #         return False
+    # return True
     return True
 
 def baseChangefromDecimal(input,base):
@@ -26,12 +26,13 @@ def baseChangefromDecimal(input,base):
 
 def baseChangetoDecimal(input,base):
     input_string = str(input)
+    digitRep = {"0":0, "1":1, "2":2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9, "A":10, "B":11, "C":12, "D":13, "E":14, "F":15, "G":16, "H":17, "I":18, "J":19, "K":20, "L":21, "M":22, "N":23, "O":24, "P":25, "Q":26, "R":27, "S":28, "T":29, "U":30, "V":31, "W":32, "X":33, "Y":34, "Z":35, }
     if (numberValidInBase(input, base)):
         iterator = 0
         sum = 0
         input_string = input_string[::-1]
         for digit in input_string:
-            sum += int(digit) * (base**iterator)
+            sum += digitRep[digit] * (base**iterator)
             iterator += 1
         return sum
 
@@ -39,5 +40,5 @@ def convertBase(num, oldBase, newBase):
     return baseChangefromDecimal(baseChangetoDecimal(num,oldBase),newBase)
 
 startTime = time()
-print(convertBase(1122847592384756978246268,10,26))
+print(convertBase("VAIBHAVMAKAWANA",36,16))
 print((time()-startTime) * 1000000, "microseconds taken to process")
