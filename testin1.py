@@ -1,2 +1,1 @@
-import sympy
-
+def roll(dice):
