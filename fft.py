@@ -8,7 +8,7 @@ tdecay = 2
 timestep = 0.01
 timemax = 100
 time = np.arange(0,timemax,timestep)
-amplitude = np.esin(0.002*npi*f0*time) * np.cos(5*npi*f0*time)
+amplitude = np.sin(0.002*npi*f0*time) * np.cos(5*npi*f0*time)
 spectrum = np.fft.fft(amplitude)
 frequency = np.fft.fftfreq( spectrum.size, d = timestep )
 index = np.where(frequency >= 0.)
