@@ -25,6 +25,7 @@ while xcurrent < xf:
     k3 = h*f(xcurrent + h, ycurrent -k1 + 2*k2)
     ycurrent += (1 / 6) * (k1 + 4 * k2 + k3)
     yarr.append(ycurrent)
+    print(N(k1),N(k2),N(k2),N(ycurrent))
     xcurrent += h
 
 print(xcurrent, N(ycurrent))
