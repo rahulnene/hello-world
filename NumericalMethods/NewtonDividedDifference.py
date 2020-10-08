@@ -21,6 +21,7 @@ while column < points:
     for i in range(0, (points - column)):
         scratch.append((table[i + 1] - table[i]) / (xarr[i + column] - xarr[i]))
     table = scratch
+    print(table)
     coefficients.append(table[0])
     column += 1
 
@@ -30,13 +31,10 @@ for i in range(1,points):
     temp = coefficients[i]
     for k in range(0,i):
         temp *= (x - xarr[k])
-    # print(temp)
-    print(y)
     y += temp
 
 print(coefficients)
 print(expand(y))
-
 
 
 tf = perf_counter()
